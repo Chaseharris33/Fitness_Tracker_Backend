@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const usersRouter = express.Router();
 
 // POST /api/users/login
 
@@ -9,4 +9,4 @@ const router = express.Router();
 
 // GET /api/users/:username/routines
 
-module.exports = router;
+module.exports = usersRouter;
