@@ -1,3 +1,5 @@
+const client = require("./client");
+
 const {
   createUser,
   getAllActivities,
@@ -7,7 +9,6 @@ const {
   addActivityToRoutine
 } = require("./");
 
-const client = require("./client");
 
 
 async function dropTables() {
@@ -136,7 +137,7 @@ async function createInitialRoutines() {
   }
 }
 
-async function createInitialRoutineActivities() {
+   async function createInitialRoutineActivities() {
   try {
     console.log('starting to create routine_activities...');
     const [bicepRoutine, chestRoutine, legRoutine, cardioRoutine] = await getRoutinesWithoutActivities();

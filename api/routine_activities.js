@@ -1,6 +1,5 @@
-const express = require('express');
+const express = require("express");
 const routineActivitiesRouter = express.Router();
-
 const {
     getRoutineActivityById,
     destroyRoutineActivity,
@@ -9,8 +8,7 @@ const {
 } = require('../db');
 
 
-// PATCH /api/routine_activities/:routineActivityId
-routineActivitiesRouter.patch("/:routineActivityId/",  async (req, res, next) => {
+routineActivitiesRouter.patch("/:routineActivityId/", async (req, res, next) => {
     const { count, duration } = req.body;
     const id = req.params.routineActivityId;
     try {
@@ -29,8 +27,7 @@ routineActivitiesRouter.patch("/:routineActivityId/",  async (req, res, next) =>
 });
 
 
-// DELETE /api/routine_activities/:routineActivityId
-routineActivitiesRouter.delete("/:routineActivityId/",  async (req, res, next) => {
+routineActivitiesRouter.delete("/:routineActivityId/", async (req, res, next) => {
   const id = req.params.routineActivityId;
   try {
     const oldRoutineActivity = await getRoutineActivityById(id);
